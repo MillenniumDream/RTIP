@@ -1,0 +1,22 @@
+[package]
+name = "rtip"
+version = "0.1.0"
+authors = ["Xiao-Tian Li <xt.li1@siat.ac.cn>"]
+edition = "2021"
+description = "An automated method that utilizes a roto-translationally invariant potential (RTIP) for efficient pathway sampling."
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+libc = "0.2"
+mpi = {version = "0.6", features = ["user-operations", "derive"]}
+ndarray = {version = "0.15.0", features = ["blas"]}
+ndarray-rand = "0.14"
+ndarray-linalg = {version = "0.15.0", features = ["openblas-system"]}
+blas-src = {version = "0.8", features = ["openblas"]}
+openblas-src = {version = "0.10", features = ["cblas", "system"]}
+phf = {version = "0.11", features = ["macros"]}
+
+[lib]
+name = "rtip"
+crate-type = ["staticlib"]
+
